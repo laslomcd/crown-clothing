@@ -12,6 +12,8 @@ const config = {
     appId: "1:709280830189:web:e7f648162241a81a5172e4"
 };
 
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
 
@@ -51,7 +53,7 @@ export const addCollectonAndDocuments = async (collectionKey, objectsToAdd) => {
     return await batch.commit()
 }
 
-export const convertCollectionSnapshotToMap = (collections) => {
+export const convertCollectionsSnapshotToMap = collections => {
     const transformedCollection = collections.docs.map(doc => {
         const { title, items } = doc.data();
         return {
@@ -67,9 +69,6 @@ export const convertCollectionSnapshotToMap = (collections) => {
         return accumulator;
     }, {})
 };
-
-
-firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

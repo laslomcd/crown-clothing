@@ -11,33 +11,32 @@ export const CheckoutItemContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    width: 23%;
-    padding-right: 15px;
+  width: 23%;
+  padding-right: 15px;
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
-export const NameContainer = styled.div`
-    width: 23%;
+export const TextContainer = styled.span`
+  width: 23%;
 `;
 
-export const QuantityContainer = styled(NameContainer)`
-    display: flex;
+export const QuantityContainer = styled(TextContainer)`
+  display: flex;
 
-    span {
-      margin: 0 10px;
-    }
+  span {
+    margin: 0 10px;
+  }
 
-    div {
-      margin: 0 10px;
-    }
+  div {
+    cursor: pointer;
+  }
 `;
 
 export const RemoveButtonContainer = styled.div`
-    padding-left: 12px;
-    cursor: pointer;
+  padding-left: 12px;
+  cursor: pointer;
 `;
-
